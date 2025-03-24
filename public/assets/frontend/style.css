@@ -360,6 +360,10 @@ span {
     justify-content: space-between;
 }
 
+.justify-content-around {
+    justify-content: space-around;
+}
+
 .justify-content-evenly {
     justify-content: space-evenly;
 }
@@ -496,6 +500,12 @@ p {
 .nav-header {
     background: rgb(255 255 255 / 2%);
 }
+
+.nav-header-scroll {
+    background-color: var(--main-green-500);
+    opacity: 0.8;
+}
+
 .nav-content {
     width: 50%;
 }
@@ -508,6 +518,10 @@ p {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.banner .scroll-down-icon img {
+    width: auto;
 }
 
 .banner::after {
@@ -608,6 +622,26 @@ h3 {
     background-image: url("/imgs/basic/arrow.png");
     left: 2px;
     top: 37%;
+}
+
+.ltr .about-content .about-cards::before {
+    left: 35%;
+    right: auto;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+}
+
+.ltr .about-content .about-cards::after {
+    right: 2px;
+    left: auto;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
 }
 
 .about-content .about-cards .about-card:nth-child(odd) {
@@ -719,6 +753,18 @@ h3 {
     }
 }
 
+@keyframes ltr-animate-arrow {
+    0% {
+        right: -19px;
+    }
+    50% {
+        right: -21px;
+    }
+    100% {
+        right: -19px;
+    }
+}
+
 .service-item .service-order a::after {
     content: "";
     position: absolute;
@@ -731,6 +777,17 @@ h3 {
     left: -19px;
     top: -6px;
 }
+
+.ltr .service-item .service-order a::after {
+    right: -19px;
+    left: auto;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+}
+
 .service-item .service-order:hover {
     opacity: 0.7;
 }
@@ -740,6 +797,11 @@ h3 {
     animation-duration: 800ms;
     animation-iteration-count: infinite;
 }
+
+.ltr .service-item .service-order:hover a::after {
+    animation-name: ltr-animate-arrow;
+}
+
 /* services section end */
 /* partners section start */
 .owl-theme .owl-dots .owl-dot span {

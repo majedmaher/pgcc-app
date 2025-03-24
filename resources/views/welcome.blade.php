@@ -12,15 +12,16 @@
     
         {{-- <link rel="stylesheet" href="{{asset('assets/frontend/style.min.css')}}" /> --}}
        <link rel="stylesheet" href="{{asset('assets/frontend/style.css')}}" />
+       <link rel="stylesheet" media="(max-width: 768px)" href="{{asset('assets/frontend/responsive.css')}}">
         <title>{{isset($title) ? $title : "PGCC Company"}}</title>
-        
+        <link rel="apple-touch-icon" href="{{asset('imgs/basic/logo.png')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       </head>
-<body>
-    {{-- <body {{app()->getLocale() == 'en' ? 'class=ltr' : ''}}> --}}
+{{-- <body> --}}
+    <body {{app()->getLocale() == 'en' ? 'class=ltr' : ''}}>
         <div class="header content position-fixed z-99">
-            <div class="nav-header shadow w-100 d-flex flex-wrap justify-content-between align-items-center container pt-10 pb-10">
+            <div class="nav-header transition-duration-500 shadow w-100 d-flex flex-wrap justify-content-between align-items-center container pt-10 pb-10">
                 <div class="menu-header d-none"></div>
                 <div class="header-content w-100 d-flex justify-content-between align-items-center">
                     <div class="nav-logo">
@@ -32,19 +33,19 @@
                     </div>
                     <div class="nav-content d-flex flex-wrap justify-content-between text-white">
                         <a href="#main" class="nav-link transition-duration-500">الرئيسية</a>
-                        <a href="#main" class="nav-link transition-duration-500">من نحن</a>
-                        <a href="#main" class="nav-link transition-duration-500">خدماتنا</a>
-                        <a href="#main" class="nav-link transition-duration-500">شركاء النجاح</a>
-                        <a href="#main" class="nav-link transition-duration-500">تواصل معنا</a>
+                        <a href="#about-us" class="nav-link transition-duration-500">من نحن</a>
+                        <a href="#services" class="nav-link transition-duration-500">خدماتنا</a>
+                        <a href="#partners" class="nav-link transition-duration-500">شركاء النجاح</a>
+                        <a href="#contact" class="nav-link transition-duration-500">تواصل معنا</a>
                     </div>
                     <div class="nav-actions text-white">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer" class=" order-button transition-duration-500 text-secondary-hover bg-white-hover banner-order-btn-1">اطلب الان</a>
+                        <a href="#contact" target="_blank" rel="noopener noreferrer" class=" order-button transition-duration-500 text-secondary-hover bg-white-hover banner-order-btn-1">اطلب الان</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="border-box position-relative overflow-hidden">
+        <div id="main" class="border-box position-relative overflow-hidden">
             <div class="banner w-100 d-flex flex-column justify-content-center align-items-center text-white">
                 <div class="scroll-down-icon z-1 position-absolute float-start-10">
                     <img src="{{asset('imgs/basic/go-to-down-icon.png')}}" alt="scroll-down" srcset="" loading="lazy" />
@@ -54,18 +55,18 @@
                     <h1>نبني المستقبل بأيدينا، ونجعل رؤيتك واقعاً</h1>
                     <h2 class="tajawal-medium text-white">تقديم حلول إنشائية مبتكرة لضمان نجاح مشاريعك بكل احترافية.</h2>
                 </div>
-                <div class="banner-action-buttons d-flex  mt-50 gap-20 align-items-center">
+                <div class="banner-action-buttons d-flex  mt-50 gap-20 align-items-center z-99">
                     <div class="banner-order-btn">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer" class="banner-order-btn-1 text-secondary-hover bg-white-hover transition-duration-500">اطلب خدمة</a>
+                        <a href="#contact" target="_blank" rel="noopener noreferrer" class="banner-order-btn-1 text-secondary-hover bg-white-hover transition-duration-500">اطلب خدمة</a>
                     </div>
                     <div class="banner-order-btn">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer"class="banner-order-btn-2 text-decoration-underline">تنزيل الملف التعريفي</a>
+                        <a href="{{asset('imgs/basic/PGCC_Arabic.pdf')}}" target="_blank" rel="noopener noreferrer"class="banner-order-btn-2 text-decoration-underline">تنزيل الملف التعريفي</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="analysis position-relative w-100 container border-box my-20 bg-section">
+        <div id="about-us" class="analysis position-relative w-100 container border-box my-20 bg-section">
             <div class="analysis-items rounded d-flex flex-wrap gap-5 justify-content-between align-items-center border-box p-20">
                 <div class="analysis-item d-flex flex-column align-items-center">
                     <div class="analysis-icon">
@@ -83,7 +84,11 @@
                         <img src="{{asset('imgs/basic/analysis-icon.png')}}" alt="analysis-icon" loading="lazy" />
                     </div>
                     <div class="analysis-title">
-                        <span>+%20</span>
+                        @if (app()->getLocale() == 'ar')
+                            <span>+%20</span>
+                        @else
+                            <span>+20%</span>
+                        @endif
                     </div>
                     <div class="analysis-description">
                         <span> أسرع في التنفيذ</span>
@@ -105,8 +110,11 @@
                         <img src="{{asset('imgs/basic/analysis-icon.png')}}" alt="analysis-icon" loading="lazy" />
                     </div>
                     <div class="analysis-title">
+                        @if (app()->getLocale() == 'ar')
                         <span>+%95</span>
-                    </div>
+                    @else
+                        <span>+95%</span>
+                    @endif                    </div>
                     <div class="analysis-description">
                         <span>رضا العملاء عن خدماتنا</span>
                     </div>
@@ -160,12 +168,12 @@
             </div>
         </div>
 
-        <div class="services container">
+        <div id="services" class="services container">
             <div class="services-header d-flex flex-column">
                 <h2>خدماتنا</h2>
                 <h3 class="mt-10">نقدم مجموعة واسعة من الخدمات المتكاملة لتلبية جميع احتياجات مشاريعك.</h3>
             </div>
-            <div class="services-content d-flex flex-wrap gap-20 mt-20">
+            <div class="services-content d-flex flex-wrap gap-20 mt-20 justify-content-around">
                 <div class="service-item">
                     <div class="service-content text-white">
                         <div class="service-icon">
@@ -175,7 +183,7 @@
                         <h4 class="service-desc text-start mt-10">هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر. هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر.</h4>
                     </div>
                     <div class="service-order mt-10">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer">اطلب خدمة</a>
+                        <a href="#contact" rel="noopener noreferrer">اطلب خدمة</a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -187,7 +195,7 @@
                         <h4 class="service-desc text-start mt-10">هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر. هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر.</h4>
                     </div>
                     <div class="service-order mt-10">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer">اطلب خدمة</a>
+                        <a href="#contact" rel="noopener noreferrer">اطلب خدمة</a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -199,7 +207,7 @@
                         <h4 class="service-desc text-start mt-10">هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر. هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر.</h4>
                     </div>
                     <div class="service-order mt-10">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer">اطلب خدمة</a>
+                        <a href="#contact" rel="noopener noreferrer">اطلب خدمة</a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -211,7 +219,7 @@
                         <h4 class="service-desc text-start mt-10">هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر. هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر.</h4>
                     </div>
                     <div class="service-order mt-10">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer">اطلب خدمة</a>
+                        <a href="#contact" rel="noopener noreferrer">اطلب خدمة</a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -223,7 +231,7 @@
                         <h4 class="service-desc text-start mt-10">هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر. هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر.</h4>
                     </div>
                     <div class="service-order mt-10">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer">اطلب خدمة</a>
+                        <a href="#contact" rel="noopener noreferrer">اطلب خدمة</a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -235,7 +243,7 @@
                         <h4 class="service-desc text-start mt-10">هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر. هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر.</h4>
                     </div>
                     <div class="service-order mt-10">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer">اطلب خدمة</a>
+                        <a href="#contact" rel="noopener noreferrer">اطلب خدمة</a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -247,7 +255,7 @@
                         <h4 class="service-desc text-start mt-10">هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر. هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر.</h4>
                     </div>
                     <div class="service-order mt-10">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer">اطلب خدمة</a>
+                        <a href="#contact" rel="noopener noreferrer">اطلب خدمة</a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -259,13 +267,13 @@
                         <h4 class="service-desc text-start mt-10">هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر. هنا يمكنك تضمين وصف موجز للعنوان في أربعة أسطر.</h4>
                     </div>
                     <div class="service-order mt-10">
-                        <a href="https://digo.sa" target="_blank" rel="noopener noreferrer">اطلب خدمة</a>
+                        <a href="#contact" rel="noopener noreferrer">اطلب خدمة</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="partners container bg-section">
+        <div id="partners" class="partners container bg-section">
             <div class="partners-header d-flex flex-column">
                 <h2>شركاء النجاح</h2>
                 <h3 class="mt-10">نقدم مجموعة واسعة من الخدمات المتكاملة لتلبية جميع احتياجات مشاريعك.</h3>
@@ -284,7 +292,7 @@
             </div>
         </div>
 
-        <div class="contact container d-flex">
+        <div id="contact" class="contact container d-flex">
             <div class="contact-form d-flex flex-column">
                 <div class="contact-header">
                     <h2 class="text-start">تواصل معنا</h2>

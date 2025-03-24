@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    $(window).scroll(function () {
+        let aboutTop = $("#about-us").first().position().top;
+        let currentTop = $(window).scrollTop();
+
+        if (currentTop >= aboutTop) {
+            $(".nav-header").addClass("nav-header-scroll");
+        } else {
+            $(".nav-header").removeClass("nav-header-scroll");
+        }
+    });
+
     aa = $("body").hasClass("ltr");
     $(".owl-carousel").owlCarousel({
         loop: true,

@@ -1,0 +1,46 @@
+@media only screen and (max-width: 768px) {
+    .about-content .about-cards::after {
+        width: 60px;
+        height: 60px;
+    }
+
+    .service-item {
+        flex: 0 0 30%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contact > div {
+        flex-basis: 100%;
+    }
+
+    #contact,
+    .form form .row.d-flex.flex-wrap.justify-content-between {
+        flex-direction: column;
+    }
+
+    .footer {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .d-flex.flex-wrap.gap-10.align-items-center {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .analysis-item.d-flex.flex-column.align-items-center {
+        flex-basis: 50%;
+    }
+
+    .about-content.mt-20.d-flex.align-items-center {
+        flex-direction: column;
+    }
+
+    .service-item {
+        flex: 0 0 100%;
+    }
+}
