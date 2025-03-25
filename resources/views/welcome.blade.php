@@ -9,7 +9,7 @@
         <meta name="author" content="Majed Maher">
         <link rel="shortcut icon" type="x-icon" href="{{asset('imgs/basic/logo.png')}}">
         <link rel="canonical" href="{{ url()->current() }}" />
-    
+
         {{-- <link rel="stylesheet" href="{{asset('assets/frontend/style.min.css')}}" /> --}}
        <link rel="stylesheet" href="{{asset('assets/frontend/style.css')}}" />
        <link rel="stylesheet" media="(max-width: 768px)" href="{{asset('assets/frontend/responsive.css')}}">
@@ -22,14 +22,21 @@
     <body {{app()->getLocale() == 'en' ? 'class=ltr' : ''}}>
         <div class="header content position-fixed z-99">
             <div class="nav-header transition-duration-500 shadow w-100 d-flex flex-wrap justify-content-between align-items-center container pt-10 pb-10">
-                <div class="menu-header d-none"></div>
                 <div class="header-content w-100 d-flex justify-content-between align-items-center">
-                    <div class="nav-logo">
+                    <div class="nav-logo d-flex justify-content-between">
                         <a href="#main">
                             <div class="logo-img">
                                 <img src="{{asset('imgs/basic/logo.png')}}" alt="logo-pgcc" srcset="" loading="lazy" />
                             </div>
                         </a>
+
+                        <div class="menu-icon">
+                            <div class="menu-box cursor-pointer d-none">
+                                <span for='menu-toggle' class="menu-icon d-flex align-items-center w-100 h-100">
+                                <div class="menu-button"></div>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     <div class="nav-content d-flex flex-wrap justify-content-between text-white">
                         <a href="#main" class="nav-link transition-duration-500">الرئيسية</a>
@@ -39,7 +46,7 @@
                         <a href="#contact" class="nav-link transition-duration-500">تواصل معنا</a>
                     </div>
                     <div class="nav-actions text-white">
-                        <a href="#contact" target="_blank" rel="noopener noreferrer" class=" order-button transition-duration-500 text-secondary-hover bg-white-hover banner-order-btn-1">اطلب الان</a>
+                        <a href="#contact" rel="noopener noreferrer" class=" order-button transition-duration-500 text-secondary-hover bg-white-hover banner-order-btn-1">اطلب الان</a>
                     </div>
                 </div>
             </div>
@@ -55,9 +62,9 @@
                     <h1>نبني المستقبل بأيدينا، ونجعل رؤيتك واقعاً</h1>
                     <h2 class="tajawal-medium text-white">تقديم حلول إنشائية مبتكرة لضمان نجاح مشاريعك بكل احترافية.</h2>
                 </div>
-                <div class="banner-action-buttons d-flex  mt-50 gap-20 align-items-center z-99">
+                <div class="banner-action-buttons d-flex  mt-50 gap-20 align-items-center z-1">
                     <div class="banner-order-btn">
-                        <a href="#contact" target="_blank" rel="noopener noreferrer" class="banner-order-btn-1 text-secondary-hover bg-white-hover transition-duration-500">اطلب خدمة</a>
+                        <a href="#contact" rel="noopener noreferrer" class="banner-order-btn-1 text-secondary-hover bg-white-hover transition-duration-500">اطلب خدمة</a>
                     </div>
                     <div class="banner-order-btn">
                         <a href="{{asset('imgs/basic/PGCC_Arabic.pdf')}}" target="_blank" rel="noopener noreferrer"class="banner-order-btn-2 text-decoration-underline">تنزيل الملف التعريفي</a>
@@ -73,7 +80,7 @@
                         <img src="{{asset('imgs/basic/analysis-icon.png')}}" alt="analysis-icon" loading="lazy" />
                     </div>
                     <div class="analysis-title">
-                        <span>+17</span>
+                        <span>+</span><span id="first-count" data-count="17">17</span>
                     </div>
                     <div class="analysis-description">
                         <span>سنة من الخبرة</span>
@@ -85,9 +92,9 @@
                     </div>
                     <div class="analysis-title">
                         @if (app()->getLocale() == 'ar')
-                            <span>+%20</span>
+                            <span>+%<span id="second-count" data-count="20">20</span></span>
                         @else
-                            <span>+20%</span>
+                            <span>+<span id="second-count" data-count="20">20</span>%</span>
                         @endif
                     </div>
                     <div class="analysis-description">
@@ -99,7 +106,7 @@
                         <img src="{{asset('imgs/basic/analysis-icon.png')}}" alt="analysis-icon" loading="lazy" />
                     </div>
                     <div class="analysis-title">
-                        <span>+10K</span>
+                       <span>+</span><span id="third-count" data-count="10">10</span><span>K</span>
                     </div>
                     <div class="analysis-description">
                         <span> مشروع مكتمل</span>
@@ -111,10 +118,11 @@
                     </div>
                     <div class="analysis-title">
                         @if (app()->getLocale() == 'ar')
-                        <span>+%95</span>
-                    @else
-                        <span>+95%</span>
-                    @endif                    </div>
+                            <span>+%<span id="forth-count" data-count="95">95</span></span>
+                        @else
+                            <span>+<span id="forth-count" data-count="95">95</span>%</span>
+                        @endif    
+                    </div>
                     <div class="analysis-description">
                         <span>رضا العملاء عن خدماتنا</span>
                     </div>
@@ -372,6 +380,10 @@
                     <a href="https://www.github.com/majedmaher" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/whatsapp-icon.png')}}" alt="whatsapp-account"></a>
                 </div>
             </div>
+        </div>
+
+        <div class="back-to-top position-fixed cursor-pointer">
+            <img src="{{asset('imgs/basic/arrow-Icon.png')}}" alt="backToTop" />
         </div>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -940,3 +940,25 @@ h3 {
     opacity: 0.7;
 }
 /* footer section end */
+
+.back-to-top {
+    bottom: 0;
+    margin: 15px;
+    background-color: var(--grey-100);
+    text-align: center;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.back-to-top img {
+    transform: rotateZ(90deg);
+    translate: 0px 3px;
+    mix-blend-mode: difference;
+    -webkit-transform: rotateZ(90deg);
+    -moz-transform: rotateZ(90deg);
+    -ms-transform: rotateZ(90deg);
+    -o-transform: rotateZ(90deg);
+}
