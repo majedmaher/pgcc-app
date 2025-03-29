@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\MainController;
+use App\Livewire\Auth\Login;
+use App\Livewire\Dashboard\About;
+use App\Livewire\Dashboard\Services;
+use App\Livewire\Dashboard\Setting;
+use App\Livewire\Dashboard\Statics;
+use App\Livewire\Dashboard\SuccessPartners;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -11,22 +18,25 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
     function () {
-        Route::get('/', function () {
-            return view('welcome');
-        })->name('home');
+        Route::get('/', [MainController::class, 'main'])->name('home');
+        Route::post('/contact/store', [MainController::class, 'contactStore'])->name('contact.store');
 
-        Route::view('dashboard', 'dashboard')
-            ->middleware(['auth', 'verified'])
-            ->name('dashboard');
+        Livewire::setUpdateRoute(function ($handle) {
+            return Route::post('/livewire/update', $handle);
+        });
 
-        Route::middleware(['auth'])->group(function () {
-            Route::redirect('settings', 'settings/profile');
+        Route::group(['middleware' => 'guest'], function () {
+            Route::get('/login', Login::class)->name('login');
+        });
 
-            Route::get('settings/profile', Profile::class)->name('settings.profile');
-            Route::get('settings/password', Password::class)->name('settings.password');
-            Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
+        Route::group(['middleware' => 'auth', 'prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+            Route::get('settings', Setting::class)->name('settings');
+            Route::get('statics', Statics::class)->name('statics');
+            Route::get('about', About::class)->name('about');
+            Route::get('services', Services::class)->name('services');
+            Route::get('partners', SuccessPartners::class)->name('partners');
         });
     }
 );
 
-require __DIR__ . '/auth.php';
+// require __DIR__ . '/auth.php';

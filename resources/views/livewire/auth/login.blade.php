@@ -1,51 +1,29 @@
-<div class="flex flex-col gap-6">
-    <x-auth-header :title="__('Log in to your account')" :description="__('Enter your email and password below to log in')" />
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" wire:submit.prevent='submit'>
+                {{-- @csrf --}}
+                <span class="login100-form-title is-invalid">
+                    {{__('auth.Sign In')}}
+                </span>
 
-    <!-- Session Status -->
-    <x-auth-session-status class="text-center" :status="session('status')" />
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
+                    <input required='false' class="input100 text-center" type="text" name="username" placeholder="{{__('auth.username')}}" wire:model.defer='name'>
+                    <span class="focus-input100"></span>
+                </div>
 
-    <form wire:submit="login" class="flex flex-col gap-6">
-        <!-- Email Address -->
-        <flux:input
-            wire:model="email"
-            :label="__('Email address')"
-            type="email"
-            required
-            autofocus
-            autocomplete="email"
-            placeholder="email@example.com"
-        />
+                <div class="wrap-input100 validate-input" data-validate = "Please enter password">
+                    <input required='false' class="input100 text-center" type="password" name="pass" placeholder="{{__('auth.password')}}" wire:model.defer='password'>
+                    <span class="focus-input100"></span>
+                </div>
 
-        <!-- Password -->
-        <div class="relative">
-            <flux:input
-                wire:model="password"
-                :label="__('Password')"
-                type="password"
-                required
-                autocomplete="current-password"
-                :placeholder="__('Password')"
-            />
+                <div class="container-login100-form-btn  p-t-40 p-b-40">
+                    <button class="login100-form-btn" type="submit">
+                        {{ __('auth.Sign In') }}
+                    </button>
+                </div>
 
-            @if (Route::has('password.request'))
-                <flux:link class="absolute right-0 top-0 text-sm" :href="route('password.request')" wire:navigate>
-                    {{ __('Forgot your password?') }}
-                </flux:link>
-            @endif
+            </form>
         </div>
-
-        <!-- Remember Me -->
-        <flux:checkbox wire:model="remember" :label="__('Remember me')" />
-
-        <div class="flex items-center justify-end">
-            <flux:button variant="primary" type="submit" class="w-full">{{ __('Log in') }}</flux:button>
-        </div>
-    </form>
-
-    @if (Route::has('register'))
-        <div class="space-x-1 text-center text-sm text-zinc-600 dark:text-zinc-400">
-            {{ __('Don\'t have an account?') }}
-            <flux:link :href="route('register')" wire:navigate>{{ __('Sign up') }}</flux:link>
-        </div>
-    @endif
+    </div>
 </div>

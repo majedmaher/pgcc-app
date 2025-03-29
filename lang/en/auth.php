@@ -12,9 +12,14 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'Sign In' => 'Sign In',
+    'username' => 'Username',
+    'password' => 'Password',
+    'error login' => 'Email or password is wrong',
+    'error empty login' => 'Please fill username and password fields',
 
     'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
+    // 'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

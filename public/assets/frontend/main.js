@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    let counters = [
-        ["#first-count", 0],
-        ["#second-count", 0],
-        ["#third-count", 0],
-        ["#forth-count", 0],
-    ];
+    let counters = [];
+
+    for (let index = 0; index < $(".counter-item").length; index++) {
+        counters.push(["#counter-item-" + index, 0]);
+    }
+
     var counter = (function () {
         var executed = false;
         return function () {
@@ -88,4 +88,35 @@ $(document).ready(function () {
     const d = new Date();
     let year = d.getUTCFullYear();
     $("#copyright").text(year);
+
+    $(".contact .contact-form .form form").on("submit", function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: "contact/store",
+            method: "POST",
+            data: new FormData(this),
+            dataType: "JSON",
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (message) {
+                console.log(message);
+                Toastify({
+                    text: message,
+                    duration: 3000,
+                    destination: "https://github.com/majedmaher",
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background:
+                            "linear-gradient(to right, #00b09b, #96c93d)",
+                    },
+                    onClick: function () {}, // Callback after click
+                }).showToast();
+            },
+        });
+    });
 });

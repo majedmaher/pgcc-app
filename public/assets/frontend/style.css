@@ -509,6 +509,10 @@ p {
 .nav-content {
     width: 50%;
 }
+
+.logo-img img {
+    max-height: 50px;
+}
 /* Navbar end */
 
 /* banner section start */
@@ -804,6 +808,18 @@ h3 {
 
 /* services section end */
 /* partners section start */
+/* .partners-carousel div img {
+    max-height: 80px;
+} */
+.owl-carousel .owl-stage {
+    display: flex;
+}
+/*(2) the direct div of each element in the owl carousel*/
+.partners-carousel div {
+    height: 100%;
+    align-items: center;
+}
+
 .owl-theme .owl-dots .owl-dot span {
     background-color: var(--secondary-yellow-400) !important;
 }
@@ -853,7 +869,7 @@ h3 {
     outline: 1px solid var(--main-green-400);
 }
 
-.form .row:not(:last-child) div label::before {
+.form .row div:not(.textarea-field) label::before {
     content: "*";
     color: red;
     font-size: 1.2rem;
