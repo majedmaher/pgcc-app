@@ -49,8 +49,10 @@ $(document).ready(function () {
 
         if (currentTop >= aboutTop) {
             $(".nav-header").addClass("nav-header-scroll");
+            $(".back-to-top").removeClass("d-none");
         } else {
             $(".nav-header").removeClass("nav-header-scroll");
+            $(".back-to-top").addClass("d-none");
         }
 
         if (currentTop > 240) {

@@ -21,6 +21,8 @@
 
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>
+
       </head>
 {{-- <body> --}}
     <body {{app()->getLocale() == 'en' ? 'class=ltr' : ''}}>
@@ -56,12 +58,15 @@
             </div>
         </div>
 
-        <div id="main" class="border-box position-relative overflow-hidden">
+        <div id="main" class="border-box d-block position-relative overflow-hidden">
+            <video autoplay muted loop id="myVideo">
+                <source src="{{asset('imgs/basic/bg.mp4')}}" type="video/mp4">
+              </video>
             <div class="banner w-100 d-flex flex-column justify-content-center align-items-center text-white">
-                <div class="scroll-down-icon z-1 position-absolute float-start-10">
-                    <img src="{{asset('imgs/basic/go-to-down-icon.png')}}" alt="scroll-down" srcset="" loading="lazy" />
+                <div id="animation-container" class="scroll-down-icon z-1 position-absolute float-start-10">
+                    {{-- <img src="{{asset('imgs/basic/scrolldown.svg')}}" alt="scroll-down" srcset="" loading="lazy" /> --}}
                 </div>
-                <div class="banner-title text-center">
+                <div class="banner-title text-center z-10">
     
                     <h1>{{$settings->main_title}}</h1>
                     <h2 class="tajawal-medium text-white">{{$settings->description_main}}</h2>
@@ -266,9 +271,28 @@
             </div>
         </div>
 
-        <div class="back-to-top position-fixed cursor-pointer">
-            <img src="{{asset('imgs/basic/arrow-Icon.png')}}" alt="backToTop" />
+        <div id="back-to-top" class="back-to-top d-none position-fixed cursor-pointer">
+            {{-- <img src="{{asset('imgs/basic/arrow-Icon.png')}}" alt="backToTop" /> --}}
         </div>
+
+        <script>
+            lottie.loadAnimation({
+                container: document.getElementById('animation-container'), // المكان الذي ستظهر فيه الأيقونة
+                renderer: 'svg', // أو يمكن استخدام 'canvas' أو 'html'
+                loop: true, // لتكرار الرسوم المتحركة
+                autoplay: true, // لتشغيل الرسوم تلقائيًا
+                path: '{{asset('imgs/basic/scrollDown.json')}}' // مسار الملف الذي يحتوي على الرسوم المتحركة
+            });
+
+            lottie.loadAnimation({
+                container: document.getElementById('back-to-top'), // المكان الذي ستظهر فيه الأيقونة
+                renderer: 'svg', // أو يمكن استخدام 'canvas' أو 'html'
+                loop: true, // لتكرار الرسوم المتحركة
+                autoplay: true, // لتشغيل الرسوم تلقائيًا
+                path: '{{asset('imgs/basic/arrowUp.json')}}' // مسار الملف الذي يحتوي على الرسوم المتحركة
+            });
+        </script>
+
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

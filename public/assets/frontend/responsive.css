@@ -97,6 +97,11 @@
         height: auto;
     }
 
+    .banner .scroll-down-icon {
+        width: 30px;
+        height: 30px;
+    }
+
     .about-content .about-cards::after {
         width: 60px;
         height: 60px;
