@@ -76,7 +76,7 @@
                         <a href="#contact" rel="noopener noreferrer" class="banner-order-btn-1 text-secondary-hover bg-white-hover transition-duration-500">{{__('main.order now')}}</a>
                     </div>
                     <div class="banner-order-btn">
-                        <a href="{{asset($settings->profile)}}" target="_blank" rel="noopener noreferrer"class="banner-order-btn-2 text-decoration-underline">{{__('main.download profile')}}</a>
+                        <a href="{{asset($settings->profile)}}" target="_blank" rel="noopener noreferrer"class="banner-order-btn-2 bg-opacity-hover transition-duration-500 text-decoration-underline">{{__('main.download profile')}}</a>
                     </div>
                 </div>
             </div>

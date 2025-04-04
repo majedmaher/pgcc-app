@@ -275,8 +275,7 @@ span {
     background-color: white;
 }
 .bg-opacity-hover:hover {
-    background-color: #fbf6ed0d;
-    opacity: 5%;
+    background-color: #fbf6ed0a !important;
 }
 
 .rounded {
@@ -545,6 +544,10 @@ p {
     height: 60px;
 }
 
+#animation-container svg path {
+    stroke: white !important;
+}
+
 .banner .scroll-down-icon img {
     width: auto;
 }
@@ -557,7 +560,8 @@ p {
     position: absolute;
 }
 
-.banner-order-btn-1 {
+.banner-order-btn-1,
+.banner .banner-order-btn-2 {
     background-color: var(--secondary-yellow-500);
     padding: 15px 11px;
     border-radius: 4px;
@@ -565,10 +569,6 @@ p {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
-}
-
-.banner .banner-order-btn-2 {
-    padding: 15px 11px;
 }
 
 /* banner section end */
@@ -704,7 +704,8 @@ h3 {
     overflow: hidden;
 }
 
-.about-content .about-cards .about-card .card-icon {
+.about-content .about-cards .about-card .card-icon,
+.about-content .about-cards .about-card .card-icon img {
     width: 32px;
     height: 32px;
 }
