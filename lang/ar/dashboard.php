@@ -76,6 +76,8 @@ return [
 
     'image' => 'الصورة',
     'title' => 'العنوان',
+    'sub title' => 'العنوان الفرعي',
+    'sub description' => 'الوصف الفرعي',
     'actions' => 'الآجراءات',
 
 
@@ -87,6 +89,7 @@ return [
     'search' => 'بحث',
 
     'service' => 'خدمة',
+    'project' => 'مشروع',
     'partner' => 'شريك',
     'client' => 'عميل',
     'license' => 'رخصة',

@@ -6,6 +6,8 @@ return [
     'who are we' => 'من نحن',
     'statics' => 'الإحصائيات',
     'our services' => 'خدماتنا',
+    'projects' => 'المشاريع',
+    'all projects' => 'جميع المشاريع',
     'about us' => 'من نحن',
     'partners' => 'شركائنا',
     'contact us' => 'تواصل معنا',

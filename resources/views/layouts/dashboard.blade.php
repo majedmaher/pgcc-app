@@ -39,12 +39,6 @@
                 },
                 onClick: function(){} // Callback after click
                 }).showToast();
-
-// Swal.fire({
-                //     title: message,
-                //     icon: 'success',
-                //     confirmButtonText: '{{__('main.ok')}}'
-                // })
             })
         
         </script>

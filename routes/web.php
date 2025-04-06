@@ -7,6 +7,8 @@ use App\Livewire\Dashboard\Services;
 use App\Livewire\Dashboard\Setting;
 use App\Livewire\Dashboard\Statics;
 use App\Livewire\Dashboard\SuccessPartners;
+use App\Livewire\Frontend\Main;
+use App\Livewire\Frontend\Projects;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -18,7 +20,8 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
     function () {
-        Route::get('/', [MainController::class, 'main'])->name('home');
+        Route::get('/', Main::class)->name('home');
+        Route::get('/projects', Projects::class)->name('projects');
         Route::post('/contact/store', [MainController::class, 'contactStore'])->name('contact.store');
 
         Livewire::setUpdateRoute(function ($handle) {

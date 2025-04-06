@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             // AboutStaticsSeeder::class,
             // AboutSeeder::class,
             // ServiceSeeder::class,
+            // ProjectSeed::class,
             // PartnerSeeder::class,
         ]);
     }

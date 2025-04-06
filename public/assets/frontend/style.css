@@ -219,16 +219,32 @@ span {
     box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
+.shadow-hover:hover {
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
 .text-white {
-    color: white;
+    color: white !important;
+}
+
+.text-main {
+    color: var(--main-green-500) !important;
+}
+
+.text-main-hover:hover {
+    color: var(--main-green-500) !important;
 }
 
 .text-secondary {
-    color: var(--secondary-yellow-500);
+    color: var(--secondary-yellow-500) !important;
+}
+
+.text-secondary-hover:hover {
+    color: var(--secondary-yellow-500) !important;
 }
 
 .bg-secondary {
-    background-color: var(--secondary-yellow-500);
+    background-color: var(--secondary-yellow-500) !important;
 }
 
 .bg-main {
@@ -337,6 +353,10 @@ span {
 
 .grid-gap-100 {
     grid-gap: 100px;
+}
+
+.grid-gap-30 {
+    grid-gap: 30px;
 }
 
 .position-fixed {
@@ -589,6 +609,10 @@ p {
     color: var(--grey-500);
     font-size: 1rem;
 }
+
+.analysis-icon img {
+    width: 35px !important;
+}
 /* Analysis section end */
 
 h2 {
@@ -829,6 +853,22 @@ h3 {
 }
 
 /* services section end */
+
+/* projects section start */
+.project-item:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.project-item:hover div h3,
+.project-item:hover div h4 {
+    color: var(--secondary-yellow-500);
+}
+/* projects section end */
+
 /* partners section start */
 /* .partners-carousel div img {
     max-height: 80px;
@@ -1000,3 +1040,43 @@ h3 {
     -ms-transform: rotateZ(90deg);
     -o-transform: rotateZ(90deg);
 }
+
+ul {
+    list-style-type: none;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+.page-item.active .page-link,
+.page-item:hover .page-link {
+    z-index: 3;
+    color: #fff !important  ;
+    background-color: var(--secondary-yellow-300) !important;
+    border-color: var(--secondary-yellow-600) !important;
+    border-radius: 50%;
+    padding: 6px 12px;
+    transition-duration: 500ms;
+}
+.page-link {
+    z-index: 3;
+    color: var(--secondary-yellow-300) !important;
+    background-color: #fff;
+    border-color: var(--secondary-yellow-600);
+    border-radius: 50%;
+    padding: 6px 12px !important;
+}
+.page-item:first-child .page-link {
+    border-radius: 30% !important;
+}
+.page-item:last-child .page-link {
+    border-radius: 30% !important;
+}
+.pagination li {
+    padding: 3px;
+}
+.disabled .page-link {
+    color: #212529 !important;
+    opacity: 0.5 !important;
+}
+/* table end */

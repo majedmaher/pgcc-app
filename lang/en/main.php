@@ -5,6 +5,8 @@ return [
     'main' => 'Main',
     'who are we' => 'Who are we',
     'our services' => 'Our Services',
+    'projects' => 'Projects',
+    'all projects' => 'All Projects',
     'statics' => 'Statics',
     'about us' => 'About us',
     'partners' => 'Partners',

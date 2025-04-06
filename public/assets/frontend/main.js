@@ -1,4 +1,14 @@
+// $(window).on("load", function () {
 $(document).ready(function () {
+    let url = window.location.href.split("#");
+    if (url.length > 1) {
+        var position = $("#" + url[1])
+            .first()
+            .position().top;
+
+        $(window).scrollTop(position);
+    }
+
     let counters = [];
 
     for (let index = 0; index < $(".counter-item").length; index++) {
@@ -43,8 +53,15 @@ $(document).ready(function () {
         $(".nav-actions").toggleClass("active", $(this).hasClass("active"));
     });
 
+    var about = $("#about-us");
+
+    if (about.length) {
+        var aboutTop = about.position().top;
+    } else {
+        var aboutTop = $("#projects").position().top;
+    }
+
     $(window).scroll(function () {
-        let aboutTop = $("#about-us").first().position().top;
         let currentTop = $(window).scrollTop();
 
         if (currentTop >= aboutTop) {
@@ -65,60 +82,7 @@ $(document).ready(function () {
         $(window).scrollTop(0);
     });
 
-    aa = $("body").hasClass("ltr");
-    $(".owl-carousel").owlCarousel({
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        lazyLoad: true,
-        rtl: true,
-        margin: 10,
-        // nav: true,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            600: {
-                items: 3,
-            },
-            1000: {
-                items: 4,
-            },
-        },
-    });
-
     const d = new Date();
     let year = d.getUTCFullYear();
     $("#copyright").text(year);
-
-    $(".contact .contact-form .form form").on("submit", function (event) {
-        event.preventDefault();
-        $.ajax({
-            url: "contact/store",
-            method: "POST",
-            data: new FormData(this),
-            dataType: "JSON",
-            contentType: false,
-            cache: false,
-            processData: false,
-            success: function (message) {
-                console.log(message);
-                Toastify({
-                    text: message,
-                    duration: 3000,
-                    destination: "https://github.com/majedmaher",
-                    newWindow: true,
-                    close: true,
-                    gravity: "top", // `top` or `bottom`
-                    position: "right", // `left`, `center` or `right`
-                    stopOnFocus: true, // Prevents dismissing of toast on hover
-                    style: {
-                        background:
-                            "linear-gradient(to right, #00b09b, #96c93d)",
-                    },
-                    onClick: function () {}, // Callback after click
-                }).showToast();
-            },
-        });
-    });
 });

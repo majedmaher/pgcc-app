@@ -7,6 +7,7 @@ use App\Models\AboutStatics;
 use App\Models\Contact;
 use App\Models\Partner;
 use App\Models\PartnerItem;
+use App\Models\Project;
 use App\Models\Service;
 use App\Models\ServiceItem;
 use App\Models\Setting;
@@ -21,9 +22,10 @@ class MainController extends Controller
         $about = About::first();
         $service = Service::first();
         $service_items = ServiceItem::latest()->get();
+        $projects = Project::latest()->take(3)->get();
         $partner = Partner::first();
         $partner_items = PartnerItem::latest()->get();
-        return view('welcome', compact('settings', 'about_statics', 'about', 'service', 'service_items', 'partner', 'partner_items'));
+        return view('welcome', compact('settings', 'about_statics', 'about', 'service', 'service_items', 'projects', 'partner', 'partner_items'));
     }
 
     public function contactStore(Request $data)

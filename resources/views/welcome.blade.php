@@ -143,9 +143,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-desc">
-                    <h2>{{$about->sub_title}}</h2>
-                    <h3 class="text-start mt-20">{{$about->sub_description}}</h3>
+                <div class="about-desc d-flex flex-column gap-50">
+                    <div class="first">
+                        <h2>{{$about->sub_title}}</h2>
+                        <h3 class="text-start mt-20">{{$about->sub_description}}</h3>
+                    </div>
+                    <div class="second">
+                        <h2>{{$about->second_sub_title}}</h2>
+                        <h3 class="text-start mt-20">{{$about->second_sub_description}}</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -170,6 +176,32 @@
                     </div>
                 </div>
                 @endforeach
+            </div>
+        </div>
+
+        <div id="projects" class="projects d-flex flex-column gap-50 position-relative w-100 container border-box my-20 bg-section align-items-center">
+            <div class="projects-title">
+                <h2>Company Projects</h2>
+            </div>
+            <div class="projects-content d-grid grid-template-3 grid-gap-30 text-center">
+                @foreach ($projects as $project)
+                <div class="project-item transition-duration-500 cursor-pointer shadow-hover rounded pb-10">
+                    <div class="project-item-image">
+                        <img class="rounded" height="50px" src="{{asset($project->image)}}" alt="{{$project->title}}">
+                    </div>
+                    <div class="project-item-title">
+                        <h3>{{$project->title}}</h3>
+                    </div>
+                    <div class="project-item-description">
+                        <h4>{{$project->description}}</h4>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <div class="project-footer">
+                <div class="all-project-btn text-white">
+                    <a class=" transition-duration-500 text-secondary-hover bg-opacity-hover bg-secondary p-20 rounded" href="/projects" target="_blank" rel="noopener noreferrer">{{__('main.all projects')}}</a>
+                </div>
             </div>
         </div>
 

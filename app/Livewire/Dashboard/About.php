@@ -10,7 +10,7 @@ class About extends Component
 {
     use WithFileUploads;
 
-    public $title_ar, $title_en, $description_ar, $description_en, $sub_title_ar, $sub_title_en, $sub_description_ar, $sub_description_en;
+    public $title_ar, $title_en, $description_ar, $description_en, $sub_title_ar, $sub_title_en, $sub_description_ar, $sub_description_en, $second_sub_title_ar, $second_sub_title_en, $second_sub_description_ar, $second_sub_description_en;
     public $first_card_image, $first_card_image_img, $first_card_title_ar, $first_card_title_en, $first_card_description_ar, $first_card_description_en;
     public $second_card_image, $second_card_image_img, $second_card_title_ar, $second_card_title_en, $second_card_description_ar, $second_card_description_en;
     public $third_card_image, $third_card_image_img, $third_card_title_ar, $third_card_title_en, $third_card_description_ar, $third_card_description_en;
@@ -81,6 +81,8 @@ class About extends Component
             'sub_title_en' => 'string|required',
             'sub_description_ar' => 'string|required',
             'sub_description_en' => 'string|required',
+            'second_sub_description_ar' => 'string|required',
+            'second_sub_description_en' => 'string|required',
 
         ]);
         $about = ModelsAbout::first();
@@ -89,6 +91,8 @@ class About extends Component
         $about->setTranslations('description', ['ar' => $this->description_ar, 'en' => $this->description_en]);
         $about->setTranslations('sub_title', ['ar' => $this->sub_title_ar, 'en' => $this->sub_title_en]);
         $about->setTranslations('sub_description', ['ar' => $this->sub_description_ar, 'en' => $this->sub_description_en]);
+        $about->setTranslations('second_sub_title', ['ar' => $this->second_sub_title_ar, 'en' => $this->second_sub_title_en]);
+        $about->setTranslations('second_sub_description', ['ar' => $this->second_sub_description_ar, 'en' => $this->second_sub_description_en]);
 
         $about->update();
         $this->dispatch('alertSuccess', __("dashboard.operation accomplished successfully"));
@@ -105,6 +109,10 @@ class About extends Component
         $this->sub_title_en = $about->getTranslation('sub_title', 'en');
         $this->sub_description_ar = $about->getTranslation('sub_description', 'ar');
         $this->sub_description_en = $about->getTranslation('sub_description', 'en');
+        $this->second_sub_title_ar = $about->getTranslation('second_sub_title', 'ar');
+        $this->second_sub_title_en = $about->getTranslation('second_sub_title', 'en');
+        $this->second_sub_description_ar = $about->getTranslation('second_sub_description', 'ar');
+        $this->second_sub_description_en = $about->getTranslation('second_sub_description', 'en');
 
         $this->first_card_title_ar = $about->getTranslation('first_card_title', 'ar');
         $this->first_card_title_en = $about->getTranslation('first_card_title', 'en');

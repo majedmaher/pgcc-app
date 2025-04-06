@@ -35,24 +35,48 @@
                 <div class="d-grid grid-template-2 sm-grid-template-1 grid-gap-20">
                     
                     <div class="form-group">
-                        <label  @error('sub_title_ar') class="error" @enderror for="title-arabic">{{__('dashboard.title')}} ({{__('dashboard.arabic')}})</label>
+                        <label  @error('sub_title_ar') class="error" @enderror for="title-arabic">{{__('dashboard.sub title')}} ({{__('dashboard.arabic')}}) 1</label>
                         <input type="text" name="title-arabic" @error('sub_title_ar') class="is-invalid" @enderror wire:model.defer='sub_title_ar' id="title-arabic">
                         @error('sub_title_ar') <span class="error">{{ __('dashboard.required') }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label @error('sub_title_en') class="error" @enderror for="title-english">{{__('dashboard.title')}} ({{__('dashboard.english')}})</label>
+                        <label @error('sub_title_en') class="error" @enderror for="title-english">{{__('dashboard.sub title')}} ({{__('dashboard.english')}}) 1</label>
                         <input type="text" name="title-english" @error('sub_title_en') class="is-invalid" @enderror wire:model.defer='sub_title_en' id="title-english">
                         @error('sub_title_en') <span class="error">{{ __('dashboard.required') }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label  @error('sub_description_ar') class="error" @enderror for="description-arabic">{{__('dashboard.description')}} ({{__('dashboard.arabic')}})</label>
+                        <label  @error('sub_description_ar') class="error" @enderror for="description-arabic">{{__('dashboard.sub description')}} ({{__('dashboard.arabic')}}) 1</label>
                         <input type="text" name="description-arabic" @error('sub_description_ar') class="is-invalid" @enderror wire:model.defer='sub_description_ar' id="description-arabic">
                         @error('sub_description_ar') <span class="error">{{ __('dashboard.required') }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label @error('sub_description_en') class="error" @enderror for="description-english">{{__('dashboard.description')}} ({{__('dashboard.english')}})</label>
+                        <label @error('sub_description_en') class="error" @enderror for="description-english">{{__('dashboard.sub description')}} ({{__('dashboard.english')}}) 1</label>
                         <input type="text" name="description-english" @error('sub_description_en') class="is-invalid" @enderror wire:model.defer='sub_description_en' id="description-english">
                         @error('sub_description_en') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                </div>
+
+                <div class="d-grid grid-template-2 sm-grid-template-1 grid-gap-20">
+                    
+                    <div class="form-group">
+                        <label  @error('second_sub_title_ar') class="error" @enderror for="title-arabic">{{__('dashboard.sub title')}} ({{__('dashboard.arabic')}}) 2</label>
+                        <input type="text" name="title-arabic" @error('second_sub_title_ar') class="is-invalid" @enderror wire:model.defer='second_sub_title_ar' id="title-arabic">
+                        @error('second_sub_title_ar') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label @error('second_sub_title_en') class="error" @enderror for="title-english">{{__('dashboard.sub title')}} ({{__('dashboard.english')}}) 2</label>
+                        <input type="text" name="title-english" @error('second_sub_title_en') class="is-invalid" @enderror wire:model.defer='second_sub_title_en' id="title-english">
+                        @error('second_sub_title_en') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label  @error('second_sub_description_ar') class="error" @enderror for="description-arabic">{{__('dashboard.sub description')}} ({{__('dashboard.arabic')}}) 2</label>
+                        <input type="text" name="description-arabic" @error('second_sub_description_ar') class="is-invalid" @enderror wire:model.defer='second_sub_description_ar' id="description-arabic">
+                        @error('second_sub_description_ar') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label @error('second_sub_description_en') class="error" @enderror for="description-english">{{__('dashboard.sub description')}} ({{__('dashboard.english')}}) 2</label>
+                        <input type="text" name="description-english" @error('second_sub_description_en') class="is-invalid" @enderror wire:model.defer='second_sub_description_en' id="description-english">
+                        @error('second_sub_description_en') <span class="error">{{ __('dashboard.required') }}</span> @enderror
                     </div>
                 </div>
 

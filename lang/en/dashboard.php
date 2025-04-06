@@ -73,6 +73,8 @@ return [
 
     'image' => 'Image',
     'title' => 'Title',
+    'sub title' => 'Sub Title',
+    'sub description' => 'Sub Description',
     'actions' => 'Actions',
 
     'confirmation message' => 'Are you sure you want to delete this item?',
@@ -83,6 +85,7 @@ return [
     'search' => 'Search',
 
     'service' => 'Service',
+    'projects' => 'Project',
     'partner' => 'Partner',
     'client' => 'Client',
     'license' => 'License',
