@@ -901,6 +901,14 @@ h3 {
     flex-basis: 30%;
 }
 
+#job.contact .contact-form {
+    flex-basis: 50%;
+}
+
+#job.contact .contact-detail {
+    flex-basis: 50%;
+}
+
 .contact .contact-detail h2 {
     font-size: 1.1rem;
 }
@@ -1080,3 +1088,117 @@ ul {
     opacity: 0.5 !important;
 }
 /* table end */
+
+/* According in job page start */
+
+/* .accordion {
+    width: 450px;
+    height: 60px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(225, 225, 225, 1);
+    overflow: hidden;
+    transition: height 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.accordion .accordion_tab {
+    padding: 20px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.accordion .accordion_tab .accordion_arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    transition: all 0.3s ease;
+}
+
+.accordion .accordion_tab .accordion_arrow img {
+    width: 100%;
+    height: 100%;
+}
+
+.accordion .accordion_tab.active .accordion_arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion.active {
+    height: 320px;
+}
+
+.accordion .accordion_content {
+    padding: 20px;
+    border-top: 1px solid #e9e9e9;
+}
+
+.accordion .accordion_content .accordion_item {
+    margin-bottom: 20px;
+}
+
+.accordion .accordion_content .accordion_item p.item_title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #6adda2;
+}
+
+.accordion .accordion_content .accordion_item p:last-child {
+    color: #9a9b9f;
+    font-size: 14px;
+    line-height: 20px;
+} */
+
+.accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.accordion-btn {
+    width: 100%;
+    padding: 15px;
+    text-align: right;
+    background-color: #f4f4f4;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-btn:hover {
+    background-color: #ddd;
+}
+
+.accordion-btn:after {
+    content: "\002B";
+    float: left;
+    font-weight: bold;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: white;
+    text-align: right;
+}
+
+/* According in job page end */

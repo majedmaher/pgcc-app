@@ -1,4 +1,4 @@
-<div>
+<div id="content">
     <div id="about-us" class="analysis position-relative w-100 container border-box my-20 bg-section">
         <div class="analysis-items rounded d-flex flex-wrap gap-5 justify-content-between align-items-center border-box p-20">
             @foreach ($about_statics as $key => $about_static )  
@@ -117,7 +117,7 @@
         </div>
         <div class="project-footer">
             <div class="all-project-btn text-white">
-                <a class=" transition-duration-500 text-secondary-hover bg-opacity-hover bg-secondary p-20 rounded" href="{{route('projects')}}" wire:navigate.hover target="_blank" rel="noopener noreferrer">{{__('main.all projects')}}</a>
+                <a class=" transition-duration-500 text-secondary-hover bg-opacity-hover bg-secondary p-20 rounded" href="{{route('projects')}}#content" wire:navigate.hover target="_blank" rel="noopener noreferrer">{{__('main.all projects')}}</a>
             </div>
         </div>
     </div>
@@ -153,14 +153,12 @@
                             @error('name') <span class="error">{{ __('dashboard.required') }}</span> @enderror
                         </div>
                         <div class="phone-field">
-                            <label for="number" class="phone-label @error('phone_number') 'error' @enderror">{{__('dashboard.phone number')}}</label>
+                            <label for="number" class="phone-label @error('phone_number') 'error' @enderror">{{__('dashboard.mobile number')}}</label>
                             <div class="phone d-flex justify-content-start gap-3">
-                                <input required="true" wire:model.defer='phone_number' class="number" type="number" name="phone_number" id="phone-number" placeholder="00 000 0000" />
+                                <input required="true" wire:model.defer='phone_number' class="number" type="number" name="phone_number" id="phone-number" placeholder="505760252" />
                                 @error('phone_number') <span class="error">{{ __('dashboard.required') }}</span> @enderror
                                 <select required="true" wire:model.defer='intro_number' name="intro_phone" id="itro-phone">
-                                    <option selected value="972">+972</option>
-                                    <option value="970">+970</option>
-                                    <option value="971">+971</option>
+                                    <option selected value="966">+966</option>
                                 </select>
                             </div>
                         </div>
@@ -168,7 +166,7 @@
                     <div class="row d-flex flex-wrap justify-content-between">
                         <div class="email-field">
                             <label for="email" class="email-label @error('email') 'error' @enderror">{{__('dashboard.email address')}}</label>
-                            <input required="true" wire:model.defer='email' type="email" class="w-100" name="email" id="email" placeholder="example@example.example" />
+                            <input required="true" wire:model.defer='email' type="email" class="w-100" name="email" id="email" placeholder="{{__('dashboard.email address example')}}" />
                             @error('email') <span class="error">{{ __('dashboard.required') }}</span> @enderror
                         </div>
                         <div class="subject-field">
@@ -210,9 +208,6 @@
 <link rel="shortcut icon" type="x-icon" href="{{asset($settings->logo)}}">
 <link rel="canonical" href="{{ url()->current() }}" />
 
-{{-- <link rel="stylesheet" href="{{asset('assets/frontend/style.min.css')}}" /> --}}
-<link rel="stylesheet" href="{{asset('assets/frontend/style.css')}}" />
-<link rel="stylesheet" media="(max-width: 768px)" href="{{asset('assets/frontend/responsive.css')}}">
 <title>{{isset($settings->title) ? $settings->title : "PGCC Company"}}</title>
 <link rel="apple-touch-icon" href="{{asset($settings->logo)}}">
 @endpush

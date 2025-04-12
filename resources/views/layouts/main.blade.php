@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         @stack('seo')
 
+        {{-- <link rel="stylesheet" href="{{asset('assets/frontend/style.min.css')}}" /> --}}
+        <link rel="stylesheet" href="{{asset('assets/frontend/style.css')}}" />
+        <link rel="stylesheet" media="(max-width: 768px)" href="{{asset('assets/frontend/responsive.css')}}">
+
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"></script>

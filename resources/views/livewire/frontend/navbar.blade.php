@@ -33,6 +33,9 @@
                     <a href="{{route('home')}}#partners" @if (url()->current() != route('home'))
                         wire:navigate.hover
                     @endif class="nav-link transition-duration-500">{{$partner_title->title}}</a>
+                    <a href="{{route('jobs')}}#content" @if (url()->current() != route('jobs'))
+                        wire:navigate.hover
+                    @endif class="nav-link transition-duration-500">{{__('main.jobs')}}</a>
                     <a href="{{route('home')}}#contact" @if (url()->current() != route('home'))
                         wire:navigate.hover
                     @endif class="nav-link transition-duration-500">{{__('main.connect with us')}}</a>

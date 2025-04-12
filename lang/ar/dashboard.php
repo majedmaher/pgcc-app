@@ -55,8 +55,9 @@ return [
     'the address is in english' => 'العنوان بالانجليزي',
 
     'contact information' => 'معلومات الاتصال',
-    'phone number' => 'رقم الهاتف',
-    'email address' => 'عنوان البريد الإلكتروني',
+    'mobile number' => 'رقم الجوال',
+    'email address' => 'البريد الالكتروني',
+    'email address example' => 'اكتب بريدك الالكتروني هنا',
 
     'worktime' => 'أوقات العمل',
     'worktime is in arabic' => 'أوقات العمل بالعربي',
@@ -90,6 +91,7 @@ return [
 
     'service' => 'خدمة',
     'project' => 'مشروع',
+    'job' => 'وظيفة',
     'partner' => 'شريك',
     'client' => 'عميل',
     'license' => 'رخصة',

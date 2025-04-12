@@ -48,8 +48,9 @@ return [
     'the address is in english' => 'The address is in English',
 
     'contact information' => 'Contact information',
-    'phone number' => 'Phone number',
+    'mobile number' => 'Mobile number',
     'email address' => 'Email Address',
+    'email address example' => 'Enter your email here',
     'worktime' => 'Work Time',
     'worktime is in arabic' => 'Work Time is in Arabic',
     'worktime is in english' => 'Work Time is in English',
@@ -85,7 +86,8 @@ return [
     'search' => 'Search',
 
     'service' => 'Service',
-    'projects' => 'Project',
+    'project' => 'Project',
+    'job' => 'Job',
     'partner' => 'Partner',
     'client' => 'Client',
     'license' => 'License',

@@ -1,4 +1,4 @@
-<div>
+<div id="content">
     <div id="projects" class="projects d-flex flex-column gap-50 position-relative w-100 container border-box my-20 bg-section align-items-center">
         <div class="projects-title">
             <h2>{{__('main.projects')}}</h2>
@@ -38,9 +38,6 @@
 <link rel="shortcut icon" type="x-icon" href="{{asset($settings->logo)}}">
 <link rel="canonical" href="{{ url()->current() }}" />
 
-{{-- <link rel="stylesheet" href="{{asset('assets/frontend/style.min.css')}}" /> --}}
-<link rel="stylesheet" href="{{asset('assets/frontend/style.css')}}" />
-<link rel="stylesheet" media="(max-width: 768px)" href="{{asset('assets/frontend/responsive.css')}}">
 <title>{{isset($settings->title) ? $settings->title : "PGCC Company"}}</title>
 <link rel="apple-touch-icon" href="{{asset($settings->logo)}}">
 @endpush

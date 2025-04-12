@@ -114,6 +114,10 @@
     .back-to-top {
         margin: 5px;
     }
+
+    #job {
+        flex-direction: column;
+    }
 }
 
 @media only screen and (max-width: 768px) {

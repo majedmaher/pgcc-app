@@ -53,18 +53,20 @@ $(document).ready(function () {
         $(".nav-actions").toggleClass("active", $(this).hasClass("active"));
     });
 
-    var about = $("#about-us");
+    // var about = $("#about-us");
 
-    if (about.length) {
-        var aboutTop = about.position().top;
-    } else {
-        var aboutTop = $("#projects").position().top;
-    }
+    // if (about.length) {
+    //     var aboutTop = about.position().top;
+    // } else {
+    //     var aboutTop = $("#projects").position().top;
+    // }
+
+    let contentTop = $("#content").position().top;
 
     $(window).scroll(function () {
         let currentTop = $(window).scrollTop();
 
-        if (currentTop >= aboutTop) {
+        if (currentTop >= contentTop) {
             $(".nav-header").addClass("nav-header-scroll");
             $(".back-to-top").removeClass("d-none");
         } else {
@@ -85,4 +87,36 @@ $(document).ready(function () {
     const d = new Date();
     let year = d.getUTCFullYear();
     $("#copyright").text(year);
+
+    // according tabs in job page
+    // $(".accordion_tab").click(function () {
+    //     $(".accordion_tab").each(function () {
+    //         $(this).parent().removeClass("active");
+    //         $(this).removeClass("active");
+    //     });
+    //     $(this).parent().addClass("active");
+    //     $(this).addClass("active");
+    // });
+
+    const acc = document.getElementsByClassName("accordion-btn");
+
+    for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+
+            // إغلاق الأقسام الأخرى
+            for (let j = 0; j < acc.length; j++) {
+                if (j !== i) {
+                    acc[j].classList.remove("active");
+                    acc[j].nextElementSibling.style.maxHeight = null;
+                }
+            }
+        });
+    }
 });

@@ -52,11 +52,40 @@
         >{{__('main.our services')}}</a>
     
         <a
+        class="nav-link transition-duration-500 {{str_contains(url()->current(), '/dashboard/projects') ? 'active':''}}"
+        href="{{route('dashboard.projects')}}"
+        wire:navigate.hover
+        rel="noopener noreferrer"
+        >{{__('main.our projects')}}</a>
+    
+        <a
         class="nav-link transition-duration-500 {{str_contains(url()->current(), '/dashboard/partners') ? 'active':''}}"
         href="{{route('dashboard.partners')}}"
         wire:navigate.hover
         rel="noopener noreferrer"
         >{{__('main.partners')}}</a>
+       
+        <a
+        class="nav-link transition-duration-500 {{str_contains(url()->current(), '/dashboard/jobs') ? 'active':''}}"
+        href="{{route('dashboard.jobs')}}"
+        wire:navigate.hover
+        rel="noopener noreferrer"
+        >{{__('main.jobs')}}</a>
+       
+       
+        <a
+        class="nav-link transition-duration-500 {{str_contains(url()->current(), '/dashboard/job/requests') ? 'active':''}}"
+        href="{{route('dashboard.jobs.requests')}}"
+        wire:navigate.hover
+        rel="noopener noreferrer"
+        >{{__('main.all jobs')}}</a>
+       
+        <a
+        class="nav-link transition-duration-500 {{str_contains(url()->current(), '/dashboard/contacts') ? 'active':''}}"
+        href="{{route('dashboard.contacts')}}"
+        wire:navigate.hover
+        rel="noopener noreferrer"
+        >{{__('main.contact us')}}</a>
     
         </div>
     </nav>
