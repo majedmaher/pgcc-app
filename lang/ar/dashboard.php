@@ -49,6 +49,7 @@ return [
     'instagram account' => 'حساب انستغرام',
     'facebook account' => 'حساب فيسبوك',
     'telegram account' => 'حساب تليغرام',
+    'tiktok account' => 'حساب تيك توك',
 
     'the address' => 'العنوان',
     'the address is in arabic' => 'العنوان بالعربي',

@@ -14,12 +14,12 @@
             <h5>{{__('main.follow us')}}</h5>
             <hr class="opacity-30 w-100" />
             <div class="social-accounts d-flex flex-wrap justify-content-between gap-10">
-                <a href="{{asset($settings->facebook)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/facebook-icon.png')}}" alt="facebook-account"></a>
-                <a href="{{asset($settings->linkedin)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/linkedIn-icon.png')}}" alt="linkedin-account"></a>
-                <a href="{{asset($settings->instagram)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/instagram-icon.png')}}" alt="instagram-account"></a>
-                <a href="{{asset($settings->twitter)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/x-icon.png')}}" alt="x-account"></a>
-                <a href="{{asset($settings->telegram)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/telegram-icon.png')}}" alt="telegram-account"></a>
-                <a href="{{asset($settings->whatsapp)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/whatsapp-icon.png')}}" alt="whatsapp-account"></a>
+                <a height="23" href="{{asset($settings->facebook)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/facebook-icon.png')}}" alt="facebook-account"></a>
+                <a height="23" href="{{asset($settings->linkedin)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/linkedIn-icon.png')}}" alt="linkedin-account"></a>
+                <a height="23" href="{{asset($settings->instagram)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/instagram-icon.png')}}" alt="instagram-account"></a>
+                <a height="23" href="{{asset($settings->twitter)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/x-icon.png')}}" alt="x-account"></a>
+                <a height="23" href="{{asset($settings->telegram)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/tik-tok.png')}}" alt="tik-tok-account"></a>
+                <a height="23" href="{{asset($settings->whatsapp)}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('imgs/basic/whatsapp-icon.png')}}" alt="whatsapp-account"></a>
             </div>
         </div>
     </div>

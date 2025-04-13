@@ -13,7 +13,7 @@ return [
     'about us' => 'About us',
     'partners' => 'Partners',
     'contact us' => 'Contact us',
-    'contact description' => 'If you have any questions or need advice regarding your project, do not hesitate to contact us. We are here to help you achieve your construction vision with the best solutions. Contact us today!',
+    'contact description' => "We're always happy to connect with you, whether you're looking for a marketing partner to fulfill your ambitions, have a question, an idea, or a desire to collaborate. Our specialized team is ready to answer all your inquiries and provide the support you need with professionalism and speed.",
     'order now' => 'Order Now',
     'download profile' => 'Download profile',
     'connect with us' => 'Connect with us',

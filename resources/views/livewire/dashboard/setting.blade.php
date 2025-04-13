@@ -86,7 +86,7 @@
                         @error('facebook') <span class="error">{{ __('dashboard.required') }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label @error('telegram') class="error" @enderror for="telegram">{{__('dashboard.telegram account')}}</label>
+                        <label @error('telegram') class="error" @enderror for="telegram">{{__('dashboard.tiktok account')}}</label>
                         <input required='false' type="text" wire:model.defer='telegram' @error('telegram') class="is-invalid" @enderror name="telegram" id="telegram" />
                         @error('telegram') <span class="error">{{ __('dashboard.required') }}</span> @enderror
                     </div>

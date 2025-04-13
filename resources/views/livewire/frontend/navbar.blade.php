@@ -41,8 +41,8 @@
                     @endif class="nav-link transition-duration-500">{{__('main.connect with us')}}</a>
                 </div>
                 <div class="nav-actions text-white">
-                    <a href="#contact" rel="noopener noreferrer" class=" order-button transition-duration-500 text-secondary-hover bg-white-hover banner-order-btn-1">{{__('main.order now')}}</a>
-                    <a href="{{app()->getLocale() == 'ar' ? LaravelLocalization::getLocalizedURL('en') : LaravelLocalization::getLocalizedURL('ar') }}" rel="noopener noreferrer" class=" order-button transition-duration-500 p-20 text-white text-secondary-hover">{{app()->getLocale() == 'ar' ? 'English' : 'العربية'}}</a>
+                    <a href="{{route('home')}}#contact" wire:navigate.hover rel="noopener noreferrer" class=" order-button transition-duration-500 text-secondary-hover bg-white-hover banner-order-btn-1">{{__('main.order now')}}</a>
+                    <a href="{{app()->getLocale() == 'ar' ? LaravelLocalization::getLocalizedURL('en') : LaravelLocalization::getLocalizedURL('ar') }}" wire:navigate.hover rel="noopener noreferrer" class=" order-button transition-duration-500 p-20 text-white text-secondary-hover">{{app()->getLocale() == 'ar' ? 'English' : 'العربية'}}</a>
                 </div>
             </div>
         </div>

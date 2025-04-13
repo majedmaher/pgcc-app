@@ -42,6 +42,7 @@ return [
     'instagram account' => 'Instagram account',
     'facebook account' => 'Facebook account',
     'telegram account' => 'Telegram account',
+    'tiktok account' => 'TikTok account',
 
     'the address' => 'The address',
     'the address is in arabic' => 'The address is in Arabic',

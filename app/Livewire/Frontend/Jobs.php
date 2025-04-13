@@ -5,6 +5,7 @@ namespace App\Livewire\Frontend;
 use App\Mail\RequestJobEmail;
 use App\Models\JobItem;
 use App\Models\RequestJob;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -13,10 +14,11 @@ class Jobs extends Component
 {
     use WithFileUploads;
 
-    public $jobs, $name, $intro_number, $phone_number, $email, $cv, $message;
+    public $settings, $jobs, $name, $intro_number, $phone_number, $email, $cv, $message;
 
     public function mount()
     {
+        $this->settings = Setting::first();
         $this->jobs = JobItem::latest()->get();
     }
 

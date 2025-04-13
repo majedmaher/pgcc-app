@@ -141,7 +141,7 @@
         <div class="contact-form d-flex flex-column">
             <div class="contact-header">
                 <h2 class="text-start">{{__('main.connect with us')}}</h2>
-                <h3 class="text-start mt-20">{{__('contact description')}}</h3>
+                <h3 class="text-start mt-20">{{__('main.contact description')}}</h3>
             </div>
             <div class="form h-100 mt-20">
                 <form class="h-100 d-flex justify-content-between flex-column" method="POST" wire:submit.prevent='contactStore'>
@@ -192,7 +192,7 @@
         <div class="contact-detail d-flex flex-column p-20">
             <h2 class="text-start">{{__('main.our location')}}</h2>
             <h4>{{__('main.location description')}}</h4>
-            <iframe class="w-100 mt-10" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d115950.79797401329!2d46.67701!3d24.745329!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1742479256826!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="w-100 mt-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228792.67545463282!2d49.9925405!3d26.3625634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e361d32276b3403%3A0xefd901ec7a5e5676!2sDammam%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1744538621662!5m2!1sen!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="contact-logo text-center mt-10">
             <img class="w-30" src="{{asset($settings->logo)}}" alt="logo" loading="lazy" />
             </div>
