@@ -20,6 +20,8 @@ return [
     'description main' => 'Description Main',
     'files section' => 'Files Section',
     'profile file' => 'Profile File',
+    'video file' => 'Video file',
+    'upload Video' => 'upload Video',
 
     'number' => 'Number',
     'after number' => 'After Number',
@@ -50,6 +52,7 @@ return [
 
     'contact information' => 'Contact information',
     'mobile number' => 'Mobile number',
+    'phone number' => 'Phone number',
     'email address' => 'Email Address',
     'email address example' => 'Enter your email here',
     'worktime' => 'Work Time',
@@ -75,6 +78,7 @@ return [
 
     'image' => 'Image',
     'title' => 'Title',
+    'link' => 'Link',
     'sub title' => 'Sub Title',
     'sub description' => 'Sub Description',
     'actions' => 'Actions',

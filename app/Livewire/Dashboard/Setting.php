@@ -10,7 +10,7 @@ class Setting extends Component
 {
     use WithFileUploads;
 
-    public $logo, $logo_img, $profile, $title_ar, $title_en, $main_title_ar, $main_title_en, $main_description_ar, $main_description_en, $profile_link, $description_footer_ar, $description_footer_en, $whatsapp, $twitter, $linkedin, $instagram, $facebook, $telegram, $description_en, $description_ar, $keywords_ar, $keywords_en;
+    public $logo, $logo_img, $profile, $title_ar, $title_en, $main_title_ar, $main_title_en, $main_description_ar, $main_description_en, $profile_link, $description_footer_ar, $description_footer_en, $whatsapp, $twitter, $linkedin, $instagram, $facebook, $telegram, $description_en, $description_ar, $keywords_ar, $keywords_en, $background_video, $email, $phone_number, $mobile_number, $post_code, $sb_number;
 
 
     public function updateLogo()
@@ -20,6 +20,15 @@ class Setting extends Component
             $setting->logo = saveImage($this->logo, 'logo');
             $setting->update();
             $this->dispatch('logoChanged', $setting->logo);
+            $this->dispatch('alertSuccess', __("dashboard.operation accomplished successfully"));
+        }
+    }
+    public function updateBackgroundVideo()
+    {
+        $setting = ModelsSetting::first();
+        if ($this->background_video) {
+            $setting->logo = saveImage($this->background_video, 'background-video');
+            $setting->update();
             $this->dispatch('alertSuccess', __("dashboard.operation accomplished successfully"));
         }
     }
@@ -56,6 +65,11 @@ class Setting extends Component
             'description_ar' => 'string|required',
             'keywords_ar' => 'string|required',
             'keywords_en' => 'string|required',
+            'email' => 'string|required',
+            'phone_number' => 'string|required',
+            'mobile_number' => 'string|required',
+            'post_code' => 'string|required',
+            'sb_number' => 'string|required',
         ]);
         $setting = ModelsSetting::first();
 
@@ -71,6 +85,11 @@ class Setting extends Component
         $setting->instagram = $this->instagram;
         $setting->facebook = $this->facebook;
         $setting->telegram = $this->telegram;
+        $setting->email = $this->email;
+        $setting->phone_number = $this->phone_number;
+        $setting->mobile_number = $this->mobile_number;
+        $setting->post_code = $setting->post_code;
+        $setting->sb_number = $this->sb_number;
         $setting->update();
         $this->dispatch('alertSuccess', __("dashboard.operation accomplished successfully"));
     }
@@ -94,6 +113,11 @@ class Setting extends Component
         $this->instagram = $setting->instagram;
         $this->facebook = $setting->facebook;
         $this->telegram = $setting->telegram;
+        $this->email = $setting->email;
+        $this->phone_number = $setting->phone_number;
+        $this->mobile_number = $setting->mobile_number;
+        $this->post_code = $setting->post_code;
+        $this->sb_number = $setting->sb_number;
         $this->keywords_ar = $setting->getTranslation('keywords', 'ar');
         $this->keywords_en = $setting->getTranslation('keywords', 'en');
         $this->description_ar = $setting->getTranslation('description', 'ar');

@@ -19,6 +19,8 @@ return [
     'description main' => 'وصف الرئيسية',
     'files section' => 'قسم الملفات',
     'profile file' => 'الملف التعريفي',
+    'video file' => 'ملف الفيديو',
+    'upload Video' => 'رفع الفيديو',
 
     'number' => 'رقم',
     'after number' => 'بعد الرقم',
@@ -57,6 +59,7 @@ return [
 
     'contact information' => 'معلومات الاتصال',
     'mobile number' => 'رقم الجوال',
+    'phone number' => 'رقم الهاتف',
     'email address' => 'البريد الالكتروني',
     'email address example' => 'اكتب بريدك الالكتروني هنا',
 
@@ -78,6 +81,7 @@ return [
 
     'image' => 'الصورة',
     'title' => 'العنوان',
+    'link' => 'الرابط',
     'sub title' => 'العنوان الفرعي',
     'sub description' => 'الوصف الفرعي',
     'actions' => 'الآجراءات',

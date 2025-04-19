@@ -48,7 +48,22 @@
                     <div class="grid-column-full">
                         <h4>{{__('dashboard.add item', ['name'=> __('dashboard.partner')])}}</h4>
                     </div>
-                    <div class="form-group grid-column-full">
+                    <div class="form-group">
+                        <label  @error('name_ar') class="error" @enderror for="name-arabic">{{__('main.name')}} ({{__('dashboard.arabic')}})</label>
+                        <input type="text" name="name-arabic" @error('name_ar') class="is-invalid" @enderror wire:model.defer='name_ar' id="name-arabic">
+                        @error('name_ar') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label @error('name_en') class="error" @enderror for="name-english">{{__('main.name')}} ({{__('dashboard.english')}})</label>
+                        <input type="text" name="name-english" @error('name_en') class="is-invalid" @enderror wire:model.defer='name_en' id="name-english">
+                        @error('name_en') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label @error('link') class="error" @enderror for="link">{{__('dashboard.link')}}</label>
+                        <input type="text" name="link" @error('link') class="is-invalid" @enderror wire:model.defer='link' id="link">
+                        @error('link') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
                         <label @error('image') class="error" @enderror for="image">{{__('dashboard.image')}}</label>
                         <input type="file" name="image" wire:model.defer='image' id="image" accept="image/png, image/jpg, image/gif, image/jpeg, image/webp"/>
                         <div wire:loading wire:target="image">Uploading...</div>
@@ -72,9 +87,24 @@
             @if ($updateIsOpen)
             <form class="w-100 d-flex flex-column gap-50 mt-50" method="POST" wire:submit.prevent='update'>
                 <input type="hidden" name="id" wire:model.defer='id_item'>
-                <div class="d-grid grid-template-2 sm-grid-template-1 grid-gap-20">
+                <div class="d-grid grid-template-3 sm-grid-template-1 grid-gap-20">
                     <div class="grid-column-full">
                         <h4>{{__('dashboard.update item', ['name'=> __('dashboard.partner')])}}</h4>
+                    </div>
+                    <div class="form-group">
+                        <label  @error('name_ar_update') class="error" @enderror for="name-arabic">{{__('main.name')}} ({{__('dashboard.arabic')}})</label>
+                        <input type="text" name="name-arabic" @error('name_ar_update') class="is-invalid" @enderror wire:model.defer='name_ar_update' id="name-arabic">
+                        @error('name_ar_update') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label @error('name_en_update') class="error" @enderror for="name-english">{{__('main.name')}} ({{__('dashboard.english')}})</label>
+                        <input type="text" name="name-english" @error('name_en_update') class="is-invalid" @enderror wire:model.defer='name_en_update' id="name-english">
+                        @error('name_en_update') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label @error('link_update') class="error" @enderror for="link">{{__('dashboard.link')}}</label>
+                        <input type="text" name="link" @error('link_update') class="is-invalid" @enderror wire:model.defer='link_update' id="link">
+                        @error('link_update') <span class="error">{{ __('dashboard.required') }}</span> @enderror
                     </div>
                     <div class="form-group">
                         <label @error('image_update') class="error" @enderror for="image-update">{{__('dashboard.image')}}</label>
@@ -100,6 +130,8 @@
                   <tr>
                     <th>#</th>
                     <th>{{__('dashboard.image')}}</th>
+                    <th>{{__('main.name')}}</th>
+                    <th>{{__('dashboard.link')}}</th>
                     <th>{{__('dashboard.actions')}}</th>
                   </tr>
                   @if(!empty($partners) && $partners->count())
@@ -107,6 +139,8 @@
                         <tr>
                             <td>{{ ++$key }}</td>
                             <td><img src="{{ asset($partner_item->image) }}" alt="{{$partner_item->title}}" width="50" height="50"></td>
+                            <td>{{$partner_item->name}}</td>
+                            <td>{{$partner_item->link}}</td>
                             <td>
                                 <div class="actions">
                                     <button wire:click='editBtn({{$partner_item->id}})' class="btn btn-info">Edit</button>

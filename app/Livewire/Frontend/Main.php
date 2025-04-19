@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Frontend;
 
+use App\Mail\RequestJobEmail;
 use App\Models\About;
 use App\Models\AboutStatics;
 use App\Models\Contact;
@@ -11,6 +12,7 @@ use App\Models\Project;
 use App\Models\Service;
 use App\Models\ServiceItem;
 use App\Models\Setting;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class Main extends Component
@@ -41,7 +43,7 @@ class Main extends Component
             'message' => 'string|nullable',
         ]);
 
-        Contact::create([
+        $request = Contact::create([
             'name' => $this->name,
             'phone_number' => $this->intro_phone . $this->phone_number,
             'email' => $this->email,
@@ -50,6 +52,14 @@ class Main extends Component
         ]);
         $this->reset(['name', 'phone_number', 'email', 'subject', 'message']);
         $this->dispatch('alertSuccess', __("dashboard.operation accomplished successfully"));
+
+        Mail::to('info@pgcc.com.sa')->send(new RequestJobEmail([
+            'name' => $request->name,
+            'phone_number' => $request->phone_number,
+            'email' => $request->email,
+            'message' => $request->message,
+            'subject' => $request->subject,
+        ]));
     }
 
     public function render()

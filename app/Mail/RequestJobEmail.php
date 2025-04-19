@@ -28,7 +28,7 @@ class RequestJobEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Request Job Email',
+            subject: 'رسالة جديدة',
         );
     }
 

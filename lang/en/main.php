@@ -11,6 +11,7 @@ return [
     'all jobs' => 'All Jobs',
     'statics' => 'Statics',
     'about us' => 'About us',
+    'company projects' => 'Company Projects',
     'partners' => 'Partners',
     'contact us' => 'Contact us',
     'contact description' => "We're always happy to connect with you, whether you're looking for a marketing partner to fulfill your ambitions, have a question, an idea, or a desire to collaborate. Our specialized team is ready to answer all your inquiries and provide the support you need with professionalism and speed.",
@@ -41,4 +42,6 @@ return [
     'follow us' => 'Follow us on social media platforms',
     'download profile' => 'Download Profile',
 
+    'post code' => 'Post Code',
+    's b' => 'S. B'
 ];

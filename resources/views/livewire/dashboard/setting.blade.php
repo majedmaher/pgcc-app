@@ -50,6 +50,34 @@
                 </div>
 
                 <div class="d-grid grid-template-3 sm-grid-template-1 grid-gap-20">
+                    <div class="form-group">
+                        <label @error('email') class="error" @enderror for="email">{{__('dashboard.email address')}}</label>
+                        <input required='false' type="text" wire:model.defer='email' @error('email') class="is-invalid" @enderror name="email" id="email" />
+                        @error('email') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label @error('phone_number') class="error" @enderror for="phone-number">{{__('dashboard.phone number')}}</label>
+                        <input required='false' type="text" wire:model.defer='phone_number' @error('phone_number') class="is-invalid" @enderror name="phone-number" id="phone-number" />
+                        @error('phone_number') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label @error('mobile_number') class="error" @enderror for="mobile-number">{{__('dashboard.mobile number')}}</label>
+                        <input required='false' type="text" wire:model.defer='mobile_number' @error('mobile_number') class="is-invalid" @enderror name="mobile-number" id="mobile-number" />
+                        @error('mobile_number') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label @error('post_code') class="error" @enderror for="post-code">{{__('main.post code')}}</label>
+                        <input required='false' type="text" wire:model.defer='post_code' @error('post_code') class="is-invalid" @enderror name="post-code" id="post-code" />
+                        @error('post_code') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label @error('sb_number') class="error" @enderror for="sb-number">{{__('main.s b')}}</label>
+                        <input required='false' type="text" wire:model.defer='sb_number' @error('sb_number') class="is-invalid" @enderror name="sb-number" id="sb-number" />
+                        @error('sb_number') <span class="error">{{ __('dashboard.required') }}</span> @enderror
+                    </div>
+                </div>
+
+                <div class="d-grid grid-template-3 sm-grid-template-1 grid-gap-20">
                     <div class="grid-column-full">
                         <h4>{{__('dashboard.social media accounts')}}</h4>
                     </div>
@@ -71,10 +99,6 @@
                     </div>
                 </div>
                 <div class="d-grid grid-template-3 sm-grid-template-1 grid-gap-20">
-                    <div class="grid-column-full">
-                        <h4>{{__('dashboard.social media accounts')}}</h4>
-                    </div>
-                    
                     <div class="form-group">
                         <label @error('instagram') class="error" @enderror for="instagram">{{__('dashboard.instagram account')}}</label>
                         <input required='false' type="text" wire:model.defer='instagram' @error('instagram') class="is-invalid" @enderror name="instagram" id="instagram" />
@@ -169,13 +193,31 @@
                 <div class="d-grid grid-template-2 sm-grid-template-1 grid-gap-20">
                         <div class="form-group">
                             <label for="image-who-are-we">{{__('dashboard.profile file')}}</label>
-                            <input required='false' type="file" name="image-who-are-we" wire:model.defer='profile' id="image-who-are-we" / />
+                            <input required='false' type="file" name="image-who-are-we" wire:model.defer='profile' id="image-who-are-we" />
                             <div wire:loading wire:target="profile">Uploading...</div>
                         </div>
                 </div>
                 <div class="d-flex justify-content-center">
                     <div class="save">
                         <button type="submit">{{__('dashboard.upload profile')}}</button>
+                    </div>
+                </div>
+            </form>
+
+            <br />
+            <hr />
+
+            <form class="w-100 d-flex flex-column gap-50" wire:submit.prevent='updateBackgroundVideo'>
+                <div class="d-grid grid-template-2 sm-grid-template-1 grid-gap-20">
+                        <div class="form-group">
+                            <label for="bg-video">{{__('dashboard.video file')}}</label>
+                            <input required='false' type="file" name="bg-video" wire:model.defer='background_video' id="bg-video" />
+                            <div wire:loading wire:target="background_video">Uploading...</div>
+                        </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="save">
+                        <button type="submit">{{__('dashboard.upload Video')}}</button>
                     </div>
                 </div>
             </form>

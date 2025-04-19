@@ -16,8 +16,8 @@ class SuccessPartners extends Component
     public $searchTerm;
 
 
-    public $image, $title_ar, $title_en, $description_ar, $description_en;
-    public $id_item, $image_update, $title_ar_update, $title_en_update, $description_ar_update, $description_en_update, $img;
+    public $image, $title_ar, $title_en, $description_ar, $description_en, $name_ar, $name_en, $link;
+    public $id_item, $image_update, $title_ar_update, $title_en_update, $name_ar_update, $name_en_update, $link_update, $description_ar_update, $description_en_update, $img;
 
     public $createIsOpen = false;
     public $updateIsOpen = false;
@@ -63,6 +63,9 @@ class SuccessPartners extends Component
     {
         $service = PartnerItem::find($id);
         $this->img = $service->image;
+        $this->name_ar_update = $service->getTranslation('name', 'ar');
+        $this->name_en_update = $service->getTranslation('name', 'en');
+        $this->link_update = $service->link;
         $this->id_item = $id;
         $this->createIsOpen = false;
         $this->updateIsOpen = true;
@@ -72,15 +75,23 @@ class SuccessPartners extends Component
     {
         $this->validate([
             'image' => 'file|required',
+            'name_ar' => 'required',
+            'name_en' => 'required',
+            'link' => 'required',
         ]);
 
         $imgLink = saveImage($this->image, 'partners-image');
         PartnerItem::create([
-            'image' => $imgLink
+            'image' => $imgLink,
+            'name' => [
+                'ar' => $this->name_ar,
+                'en' => $this->name_en,
+            ],
+            'link' => $this->link
         ]);
         $this->createIsOpen = false;
         $this->updateIsOpen = false;
-        $this->reset(['image']);
+        $this->reset(['image', 'name_ar', 'name_en', 'link']);
         $this->dispatch('alertSuccess', __("dashboard.operation accomplished successfully"));
     }
 
@@ -88,17 +99,24 @@ class SuccessPartners extends Component
     {
         $this->validate([
             'id_item' => 'required',
-            'image_update' => 'file|required',
+            'image_update' => 'file|nullable',
+            'name_ar_update' => 'required',
+            'name_en_update' => 'required',
+            'link_update' => 'required',
         ]);
 
         $partner = PartnerItem::find($this->id_item);
 
-        $partner->image = saveImage($this->image_update, 'partners-image');
+        if ($this->image_update) {
+            $partner->image = saveImage($this->image_update, 'partners-image');
+        }
+        $partner->setTranslations('name', ['ar' => $this->name_ar_update, 'en' => $this->name_en_update]);
+        $partner->link = $this->link_update;
 
         $partner->update();
         $this->createIsOpen = false;
         $this->updateIsOpen = false;
-        $this->reset(['image_update']);
+        $this->reset(['image_update', 'name_ar_update', 'name_en_update', 'link_update']);
         $this->dispatch('alertSuccess', __("dashboard.operation accomplished successfully"));
     }
 

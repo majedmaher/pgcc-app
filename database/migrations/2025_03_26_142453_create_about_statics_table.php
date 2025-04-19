@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('image');
-            $table->tinyInteger('number');
+            $table->mediumInteger('number');
             $table->string('description');
             $table->char('after_number', 3)->nullable();
             $table->char('before_number', 3)->nullable();
