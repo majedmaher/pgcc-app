@@ -50,7 +50,7 @@
 
     <div id="main" class="border-box d-block position-relative overflow-hidden">
         <video autoplay muted loop id="myVideo">
-            <source src="{{asset('imgs/basic/bg.mp4')}}" type="video/mp4">
+            <source src="{{asset($settings->background_video)}}" type="video/mp4">
         </video>
         <div class="banner w-100 d-flex flex-column justify-content-center align-items-center text-white">
             <div id="animation-container" class="scroll-down-icon z-1 position-absolute float-start-10">

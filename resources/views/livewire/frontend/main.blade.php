@@ -98,7 +98,7 @@
 
     <div id="projects" class="projects d-flex flex-column gap-50 position-relative w-100 container border-box my-20 bg-section align-items-center">
         <div class="projects-title">
-            <h2>Company Projects</h2>
+            <h2>{{__('main.company projects')}}</h2>
         </div>
         <div class="projects-content d-grid grid-template-3 grid-gap-30 text-center">
             @foreach ($projects as $project)
@@ -219,5 +219,6 @@
 
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="{{asset('assets/frontend/owl-carousel.js')}}"></script>
+<script src="{{asset('assets/frontend/owl-carousel.min.js')}}"></script>
+{{-- <script src="{{asset('assets/frontend/owl-carousel.js')}}"></script> --}}
 @endpush
