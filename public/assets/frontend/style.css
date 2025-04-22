@@ -338,6 +338,10 @@ span {
     flex-wrap: wrap;
 }
 
+.flex-basis-30 {
+    flex-basis: 30%;
+}
+
 .d-none {
     display: none;
 }

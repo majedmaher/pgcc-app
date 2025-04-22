@@ -23,6 +23,7 @@ return [
     'contact information' => 'Contact Information',
     'contact information details' => 'We are pleased to receive you in our office or to communicate with us through the data below',
     'copyright' => 'All rights reserved to Ali Al-Sharif Lawyers and Legal Consultants',
+    'Quick links' => 'Quick links',
 
     'ok' => 'OK',
 

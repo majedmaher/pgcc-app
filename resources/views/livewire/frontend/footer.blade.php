@@ -1,7 +1,7 @@
 <div>
     
     <div class="footer bg-main container d-flex flex-wrap justify-content-between">
-        <div class="d-flex flex-column align-items-start gap-10 align-items-center">
+        <div class="d-flex flex-basis-30 flex-column align-items-start gap-10 align-items-center">
             <div class="footer-logo d-flex">
                 <img src="{{asset($settings->logo)}}" alt="footer-logo" loading="lazy" />
                 <img src="{{asset('imgs/basic/vision-2030-3.png')}}" alt="footer-logo" loading="lazy" />
@@ -12,15 +12,41 @@
             </div>
         </div>
 
-        <div class="d-flex flex-column gap-10 text-white align-items-center">
+        <div class="d-flex flex-basis-30 flex-column gap-10 text-white align-items-center">
+            <h5 class="footer-title">{{__('main.Quick links')}}</h5>
+            
+            <a href="{{route('home')}}#main" @if (url()->current() != route('home'))
+                wire:navigate.hover
+            @endif class="text-secondary-hover transition-duration-500">{{__('main.main')}}</a>
+            <a href="{{route('home')}}#about-us" @if (url()->current() != route('home'))
+                wire:navigate.hover
+            @endif class="text-secondary-hover transition-duration-500">{{$about_title->title}}</a>
+            <a href="{{route('home')}}#services" @if (url()->current() != route('home'))
+                wire:navigate.hover
+            @endif class="text-secondary-hover transition-duration-500">{{$service_title->title}}</a>
+            <a href="{{route('home')}}#projects" @if (url()->current() != route('home'))
+                wire:navigate.hover
+            @endif class="text-secondary-hover transition-duration-500">{{__('main.projects')}}</a>
+            <a href="{{route('home')}}#partners" @if (url()->current() != route('home'))
+                wire:navigate.hover
+            @endif class="text-secondary-hover transition-duration-500">{{$partner_title->title}}</a>
+            <a href="{{route('jobs')}}#content" @if (url()->current() != route('jobs'))
+                wire:navigate.hover
+            @endif class="text-secondary-hover transition-duration-500">{{__('main.jobs')}}</a>
+            <a href="{{route('home')}}#contact" @if (url()->current() != route('home'))
+                wire:navigate.hover
+            @endif class="text-secondary-hover transition-duration-500">{{__('main.connect with us')}}</a>
+
+            <br />
+            <br />
+            
             <h5 class="footer-title">{{__('main.partners')}}</h5>
             @foreach ($partners as $partner)
                 <a class="text-secondary-hover transition-duration-500" href="{{$partner->link}}" target="_blank" rel="noopener noreferrer"><span>{{$partner->name}}</span></a>
             @endforeach
-            
         </div>
 
-        <div class="d-flex flex-column gap-10 text-white align-items-center">
+        <div class="d-flex flex-basis-30 flex-column gap-10 text-white align-items-center">
             <h4 class="footer-title">{{$settings->email}}</h4>
             <h6>{{__('dashboard.phone number') .': '. $settings->phone_number}}</h6>
             <h6>{{__('dashboard.mobile number') .': '. $settings->mobile_number}}</h6>

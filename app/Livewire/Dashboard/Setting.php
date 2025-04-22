@@ -27,7 +27,7 @@ class Setting extends Component
     {
         $setting = ModelsSetting::first();
         if ($this->background_video) {
-            $setting->logo = saveImage($this->background_video, 'background-video');
+            $setting->background_video = saveImage($this->background_video, 'background-video');
             $setting->update();
             $this->dispatch('alertSuccess', __("dashboard.operation accomplished successfully"));
         }
@@ -88,7 +88,7 @@ class Setting extends Component
         $setting->email = $this->email;
         $setting->phone_number = $this->phone_number;
         $setting->mobile_number = $this->mobile_number;
-        $setting->post_code = $setting->post_code;
+        $setting->post_code = $this->post_code;
         $setting->sb_number = $this->sb_number;
         $setting->update();
         $this->dispatch('alertSuccess', __("dashboard.operation accomplished successfully"));
