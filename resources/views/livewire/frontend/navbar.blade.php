@@ -4,8 +4,12 @@
             <div class="header-content w-100 d-flex justify-content-between align-items-center">
                 <div class="nav-logo d-flex justify-content-between">
                     <a href="#main">
-                        <div class="logo-img">
-                            <img src="{{asset($settings->logo)}}" alt="logo-pgcc" loading="lazy" />
+                        <div class="logo-img d-flex gap-10">
+                            <img class="w-auto" src="{{asset($settings->logo)}}" alt="logo-pgcc" loading="lazy" />
+                            <div class="logo-title d-flex flex-column justify-content-center">
+                                <h6 class="text-secondary">مؤسسة أصول التعاون الخليجي للمقاولات</h6>
+                                <h6 class="text-white">Principles Gulf Cooperation Contracting EST</h6>
+                            </div>
                         </div>
                     </a>
 

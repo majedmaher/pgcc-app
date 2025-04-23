@@ -1,4 +1,20 @@
 @media only screen and (max-width: 768px) {
+    .m-flex-basis-100 {
+        flex-basis: 100%;
+    }
+
+    .m-justify-content-center {
+        justify-content: center;
+    }
+
+    .m-flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .m-flex-column {
+        flex-direction: column;
+    }
+
     .menu-box {
         display: block;
         width: 30px;
@@ -118,9 +134,7 @@
     #job {
         flex-direction: column;
     }
-}
 
-@media only screen and (max-width: 768px) {
     .contact > div {
         flex-basis: 100%;
     }
