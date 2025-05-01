@@ -42,6 +42,7 @@ return [
     'develop footer' => 'Developed and maintained by Majed Ziara',
     'follow us' => 'Follow us on social media platforms',
     'download profile' => 'Download Profile',
+    'all projects' => 'All Projects',
 
     'post code' => 'Post Code',
     's b' => 'S. B'

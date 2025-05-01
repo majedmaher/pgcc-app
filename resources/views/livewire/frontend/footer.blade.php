@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div class="d-flex flex-basis-30 m-flex-basis-100 flex-column gap-50 text-white align-items-center">
+        <div class="d-flex flex-basis-30 m-flex-basis-100 flex-column gap-20 text-white align-items-center">
             <div class="quick-links d-flex flex-column gap-10 align-items-center">
                 <h5 class="footer-title">{{__('main.Quick links')}}</h5>
             

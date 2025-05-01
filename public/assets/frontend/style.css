@@ -745,7 +745,7 @@ h3 {
 .about-content .about-cards .about-card {
     counter-increment: section;
     position: relative;
-    width: 250px;
+    width: 50%;
     /*height: 76px;
     */
     background-color: var(--bg-card);
@@ -1033,8 +1033,11 @@ h3 {
     font-size: 2rem;
 }
 
-.copyright h6 {
+.copyright h6,
+.footer-contacts h6,
+.description-footer h5 {
     font-weight: 400;
+    font-size: 1.1rem !important;
 }
 
 .social-accounts a {

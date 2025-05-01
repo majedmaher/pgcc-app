@@ -100,7 +100,7 @@
         <div class="projects-title">
             <h2>{{__('main.company projects')}}</h2>
         </div>
-        <div class="projects-content d-grid grid-template-3 grid-gap-30 text-center">
+        <div class="projects-content d-grid m-grid-template-1 grid-template-3 grid-gap-30 text-center">
             @foreach ($projects as $project)
             <div class="project-item transition-duration-500 cursor-pointer shadow-hover rounded pb-10">
                 <div class="project-item-image">

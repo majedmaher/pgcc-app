@@ -15,6 +15,10 @@
         flex-direction: column;
     }
 
+    .m-grid-template-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .menu-box {
         display: block;
         width: 30px;
@@ -121,6 +125,10 @@
     .about-content .about-cards::after {
         width: 60px;
         height: 60px;
+    }
+
+    .about-content .about-cards .about-card {
+        width: fit-content;
     }
 
     .service-item {
